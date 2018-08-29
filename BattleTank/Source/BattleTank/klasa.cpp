@@ -22,7 +22,6 @@ void Aklasa::BeginPlay()
 void Aklasa::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	UE_LOG(LogTemp, Warning, TEXT("Playing a game"));
 
 }
 
