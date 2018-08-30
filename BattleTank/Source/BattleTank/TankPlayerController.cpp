@@ -7,5 +7,15 @@ ATank* ATankPlayerController::GetControlledTank() const
 {
 
 	return Cast<ATank>(GetPawn());
+
 }
 
+void ATankPlayerController::BeginPlay()
+{
+	Super::BeginPlay();
+	UE_LOG(LogTemp, Warning, TEXT("Player controller begin play"));
+
+	ATank* Tiger =  Cast<ATank>(GetPawn());
+	UE_LOG(LogTemp, Warning, TEXT("You are possessing %s"), *Tiger->GetName());
+
+}
