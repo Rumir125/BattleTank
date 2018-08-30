@@ -14,7 +14,7 @@ ATank* ATankAIController::GetControlledTank() const
 void ATankAIController::BeginPlay()
 {
 	Super::BeginPlay();
-	UE_LOG(LogTemp, Warning, TEXT("Player controller begin play"));
+	UE_LOG(LogTemp, Warning, TEXT("AI controller begin play"));
 
 	ATank* Tiger = GetPlayerTank();
 	if (Tiger)
