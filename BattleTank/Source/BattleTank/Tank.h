@@ -3,7 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "TankAimingComponent.h"
+#include "Public/TankAimingComponent.h"
 #include "GameFramework/Pawn.h"
 #include "Tank.generated.h"
 
@@ -32,6 +32,7 @@ public:
 
 	void AimAt(FVector HitLocation);
 
-
+	UFUNCTION(BlueprintCallable, Category = "Setup")
+	void SetBarrelReference(UStaticMeshComponent* BarrelToSet);
 	
 };
