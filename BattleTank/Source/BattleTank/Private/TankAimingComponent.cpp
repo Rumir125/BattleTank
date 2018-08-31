@@ -66,6 +66,11 @@ void UTankAimingComponent::SetBarrelReference(UTankBarrel * BarrelToSet)
 {
 	Barrel = BarrelToSet;
 }
+
+void UTankAimingComponent::SetTurretReference(UTankTurret * TurretToSet)
+{
+	Turret = TurretToSet;
+}
  
 void UTankAimingComponent::MoveBarrelTowards(FVector AimDirection)
 {
@@ -77,6 +82,8 @@ void UTankAimingComponent::MoveBarrelTowards(FVector AimDirection)
 	auto DeltaRotator = AimRotator - BarrelRotatator;
 
 	Barrel->Elevate(DeltaRotator.Pitch);
+
+	Turret->RotateTurret(DeltaRotator.Yaw);
 
 }
 
