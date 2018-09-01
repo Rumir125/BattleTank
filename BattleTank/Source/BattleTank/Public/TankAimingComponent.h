@@ -42,7 +42,7 @@ private:
 
 	UTankTurret* Turret = nullptr;
 
-	void MoveBarrelTowards(FVector AimDirection);
+	void MoveBarrelAndTurretTowards(FVector AimDirection);
 
 	// TODO set a turret reference
 

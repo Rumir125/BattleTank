@@ -37,6 +37,7 @@ void UTankAimingComponent::TickComponent(float DeltaTime, ELevelTick TickType, F
 void UTankAimingComponent::AimAt(FVector HitLocation, float LaunchSpeed)
 {
 	if (!Barrel) { return; }
+	if (!Turret) { return; }
 
 	FVector OutLaunchVelocity;
 	FVector StartLocation = Barrel->GetSocketLocation(FName("Projectile"));
@@ -57,8 +58,7 @@ void UTankAimingComponent::AimAt(FVector HitLocation, float LaunchSpeed)
 	if(bHaveAimSoluton)
 	{
 		auto AimDirection = OutLaunchVelocity.GetSafeNormal();
-		MoveBarrelTowards(AimDirection);
-		UE_LOG(LogTemp, Warning, TEXT("Aim solution found!"));
+		MoveBarrelAndTurretTowards(AimDirection);
 	}
 }
 
@@ -72,7 +72,7 @@ void UTankAimingComponent::SetTurretReference(UTankTurret * TurretToSet)
 	Turret = TurretToSet;
 }
  
-void UTankAimingComponent::MoveBarrelTowards(FVector AimDirection)
+void UTankAimingComponent::MoveBarrelAndTurretTowards(FVector AimDirection)
 {
 	// work out difference between current barrell rotation and aimdirection
 	//move the barel the right amount this frame

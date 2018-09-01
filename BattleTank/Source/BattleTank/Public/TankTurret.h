@@ -18,6 +18,6 @@ public:
 	void RotateTurret(float MaxYawRotationSpeed);
 
 	UPROPERTY(EditAnywhere, Category = "Setup")
-	float MaxDegreesPerSecond = 12;
+	float MaxDegreesPerSecond = 25;
 	
 };
