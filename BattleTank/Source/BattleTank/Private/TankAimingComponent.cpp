@@ -55,10 +55,13 @@ void UTankAimingComponent::AimAt(FVector HitLocation, float LaunchSpeed)
 		0,
 		ESuggestProjVelocityTraceOption::DoNotTrace); // comment this line to prodeuce bug
 
+	
+
 	if(bHaveAimSoluton)
 	{
 		auto AimDirection = OutLaunchVelocity.GetSafeNormal();
 		MoveBarrelAndTurretTowards(AimDirection);
+		UE_LOG(LogTemp, Warning, TEXT("We have a firing solution"));
 	}
 }
 
