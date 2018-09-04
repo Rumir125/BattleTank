@@ -61,7 +61,6 @@ void UTankAimingComponent::AimAt(FVector HitLocation, float LaunchSpeed)
 	{
 		auto AimDirection = OutLaunchVelocity.GetSafeNormal();
 		MoveBarrelAndTurretTowards(AimDirection);
-		UE_LOG(LogTemp, Warning, TEXT("We have a firing solution"));
 	}
 }
 
